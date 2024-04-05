@@ -45,10 +45,7 @@ export default function ({ children }) {
 		const x = e.pageX - slider.current.offsetLeft;
 		const walk = x - startX.current;
 		sliderLeft.current = Math.min(sliderLeft.current + walk, 0);
-		// sliderLeft.current = Math.max(sliderLeft.current, slider.current.offSetWidth - "100%")
-		// console.log(slider.current.offsetWidth);
-		// console.log(slider.current.parentElement);
-
+		sliderLeft.current = Math.max(sliderLeft.current, slider.current.parentElement.offsetWidth - slider.current.scrollWidth);
 		slider.current.style.left = sliderLeft.current + "px";
 	};
 
