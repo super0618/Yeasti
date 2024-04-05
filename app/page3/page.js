@@ -3,7 +3,7 @@ import SideMenu from "@/components/sideMenu";
 import { IconSettings, IconBell } from "@tabler/icons-react";
 import MenuCard from "@/components/menuCard";
 
-export default function () {
+export default function Home() {
 	return (
 		<div className="flex h-full">
 			<SideMenu />
@@ -17,16 +17,23 @@ export default function () {
 					</div>
 				</div>
 				<div className="container p-6" style={{ height: "calc(100% - 44px)" }}>
-					<div className="bg-[url('/images/Banner.png')] bg-cover bg-center h-[180px] rounded-[20px] mb-6"></div>
-					<div className="text-[22px] text-white font-semibold mb-2">Current Tap List</div>
-					<div className="overflow-hidden">
+					<div className="grid pt-6 grid-cols-3 text-white gap-6 mb-24">
+						<div className="col-span-2 bg-[#060B28] rounded-[20px] p-6">
+							<p className="text-xs mb-3">Search for Product</p>
+							<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="hazy" />
+						</div>
+						<div className="bg-[#060B28] rounded-[20px] p-6">
+							<p className="text-lg font-bold mb-3">Cant find what your looking for?</p>
+							<div className="mx-auto bg-white rounded-xl w-[100px] h-8 grid place-items-center text-[10px] text-[#0F1535]">Add</div>
+						</div>
+					</div>
+					<div className="overflow-hidden mb-12">
 						<CustomSlider>
-							<MenuCard bgImgSrc="/images/cardbg1.png" num={1} title="Brazil Loves New England" description="NEIPA with Simcoe, Mosaic, and Citra" members={["4oz - $2", "10oz - $4", "16oz - $7"]} />
-							<MenuCard bgImgSrc="/images/cardbg2.png" num={2} title="Fruit Punch Project" description="Berliner Weisse with Fruit Punch" members={["4oz - $2", "10oz - $4", "16oz - $7"]} />
-							<MenuCard bgImgSrc="/images/cardbg3.png" num={3} title="Doubting The Buffalo" description="Barrel Aged Stout with Cinnamon and Vanilla" members={["4oz - $2", "10oz - $4", "16oz - $7"]} />
+							<MenuCard bgImgSrc="/images/cardbg1.png" title="Hazy Little Thing" description="Sierra Nevada Brewing Company" members={[]} />
+							<MenuCard bgImgSrc="/images/cardbg2.png" title="Hazy Jane" description="BrewDog" members={[]} />
+							<MenuCard bgImgSrc="/images/cardbg3.png" title="Hazy Wonder" description="Lagunitas Brewing Comapny" members={[]} />
 						</CustomSlider>
 					</div>
-					<div className="text-[22px] text-white font-semibold mb-2">Current Can/Bottle List</div>
 					<div className="overflow-hidden">
 						<CustomSlider>
 							<MenuCard bgImgSrc="/images/cardbg.png" title="Mylar Bags" description="NEIPA with Amarillo, Galaxy, Citra, Mosaic, El dorado" members={["", "16oz Can - $8", ""]} />
