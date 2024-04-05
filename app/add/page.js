@@ -19,7 +19,7 @@ export default function Home() {
 					<div className="grid grid-cols-5 gap-4">
 						<div className="col-span-2 bg-[#060B28] rounded-[20px] px-8 pt-4 pb-8">
 							<p className="text-lg font-bold text-white mb-4">Product Image</p>
-							<img src="/images/item.jpg" alt="item" className="mb-10" />
+							<img src="/images/item.jpg" alt="item" className="mb-10 h-[464px] object-contain" />
 							<div className="flex justify-center gap-4">
 								<div className="bg-white rounded-xl w-[100px] h-9 grid place-items-center text-[10px] text-[#0F1535] font-black">ADD</div>
 								<div className="bg-white rounded-xl w-[100px] h-9 grid place-items-center text-[10px] text-[#0F1535] font-black">REMOVE</div>
