@@ -48,11 +48,9 @@ const CustomSlider = ({ children }) => {
 		const walk = x - startX.current;
 		sliderLeft.current = Math.min(sliderLeft.current + walk, 0);
 		// sliderLeft.current = Math.max(sliderLeft.current, slider.current.offSetWidth - "100%")
-		console.log(slider.current.offsetWidth);
+		// console.log(slider.current.offsetWidth);
 		// console.log(slider.current.parentElement);
 
-		// sliderLeft.current = Math.min(0, sliderLeft.current + walk);
-		// sliderLeft.current = Math.min(sliderLeft.current + walk, slider.current.offsetWidth);
 		slider.current.style.left = sliderLeft.current + "px";
 	};
 
@@ -107,10 +105,12 @@ export default function Home() {
 						</CustomSlider>
 					</div>
 					<div className="text-[22px] text-white font-semibold mb-2">Current Can/Bottle List</div>
-					<div className="flex justify-between gap-6 pb-4 overflow-auto">
-						<MenuCard bgImgSrc="/images/cardbg.png" num={1} title="Mylar Bags" description="NEIPA with Amarillo, Galaxy, Citra, Mosaic, El dorado" members={["", "16oz Can - $8", ""]} />
-						<MenuCard bgImgSrc="/images/cardbg.png" num={2} title="EverHaze" description="NEIPA with Amarillo, Citra, Cashmere" members={["", "16oz Can - $8", ""]} />
-						<MenuCard bgImgSrc="/images/cardbg.png" num={3} title="Very HHHazyyy" description="NEIPA with Galaxy, Citra, and some other hops" members={["", "16oz Can - $8", ""]} />
+					<div className="overflow-hidden">
+						<CustomSlider>
+							<MenuCard bgImgSrc="/images/cardbg.png" num={1} title="Mylar Bags" description="NEIPA with Amarillo, Galaxy, Citra, Mosaic, El dorado" members={["", "16oz Can - $8", ""]} />
+							<MenuCard bgImgSrc="/images/cardbg.png" num={2} title="EverHaze" description="NEIPA with Amarillo, Citra, Cashmere" members={["", "16oz Can - $8", ""]} />
+							<MenuCard bgImgSrc="/images/cardbg.png" num={3} title="Very HHHazyyy" description="NEIPA with Galaxy, Citra, and some other hops" members={["", "16oz Can - $8", ""]} />
+						</CustomSlider>
 					</div>
 				</div>
 			</div>
