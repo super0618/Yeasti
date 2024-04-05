@@ -1,55 +1,67 @@
+"use client";
+
+import { useEffect, useState, useRef } from "react";
 import { IconSettings, IconBell } from "@tabler/icons-react";
 import MenuCard from "@/components/menuCard";
 
-// let slider = document.querySelector(".slider");
-// let innerSlider = document.querySelector(".slider-inner");
+const CustomSlider = ({ children }) => {
+	const slider = useRef(null);
+	const isDown = useRef(false);
+	const startX = useRef(null);
+	const scrollLeft = useRef(null);
+	const sliderLeft = useRef(0);
 
-// let pressed = false;
-// let startx;
-// let x;
+	useEffect(() => {
+		if (slider && slider.current) {
+			slider.current.addEventListener("mousedown", onMouseDown);
+			slider.current.addEventListener("mouseleave", onMouseLeave);
+			slider.current.addEventListener("mouseup", onMouseUp);
+			slider.current.addEventListener("mousemove", onMouseMove);
 
-// slider.addEventListener("mousedown", (e) => {
-// 	pressed = true;
-// 	startx = e.offsetX - innerSlider.offsetLeft;
-// 	console.log(`OffsetX: ${e.offsetX}, InnerSlider OffsetLeft: ${innerSlider.offsetLeft}`);
-// 	slider.style.cursor = "grabbing";
-// });
+			return () => {
+				slider.current.removeEventListener("mousedown", onMouseDown);
+				slider.current.removeEventListener("mouseleave", onMouseLeave);
+				slider.current.removeEventListener("mouseup", onMouseUp);
+				slider.current.removeEventListener("mousemove", onMouseMove);
+			};
+		}
+	}, []);
 
-// slider.addEventListener("mouseenter", () => {
-// 	slider.style.cursor = "grab";
-// });
+	const onMouseDown = (e) => {
+		isDown.current = true;
+		startX.current = e.pageX - slider.current.offsetLeft;
+		scrollLeft.current = sliderLeft.current;
+	};
 
-// slider.addEventListener("mouseup", () => {
-// 	slider.style.cursor = "grab";
-// });
+	const onMouseLeave = (e) => {
+		isDown.current = false;
+	};
 
-// window.addEventListener("mouseup", () => {
-// 	pressed = false;
-// });
+	const onMouseUp = (e) => {
+		isDown.current = false;
+	};
 
-// slider.addEventListener("mousemove", (e) => {
-// 	if (!pressed) return;
-// 	e.preventDefault();
+	const onMouseMove = (e) => {
+		if (!isDown.current) return;
+		e.preventDefault();
+		const x = e.pageX - slider.current.offsetLeft;
+		const walk = x - startX.current;
+		sliderLeft.current = Math.min(sliderLeft.current + walk, 0);
+		// sliderLeft.current = Math.max(sliderLeft.current, slider.current.offSetWidth - "100%")
+		console.log(slider.current.offsetWidth);
+		// console.log(slider.current.parentElement);
 
-// 	x = e.offsetX;
-// 	console.log(`x: ${x}, startx: ${startx}`);
-// 	console.log(`Diff: ${x - startx}`);
+		// sliderLeft.current = Math.min(0, sliderLeft.current + walk);
+		// sliderLeft.current = Math.min(sliderLeft.current + walk, slider.current.offsetWidth);
+		slider.current.style.left = sliderLeft.current + "px";
+	};
 
-// 	innerSlider.style.left = `${x - startx}px`;
-// 	checkBoundary();
-// });
-
-// function checkBoundary(x, startx) {
-// 	let outer = slider.getBoundingClientRect();
-// 	let inner = innerSlider.getBoundingClientRect();
-
-// 	if (parseInt(innerSlider.style.left) > 0) {
-// 		innerSlider.style.left = "0px";
-// 	}
-// 	if (inner.right < outer.right) {
-// 		innerSlider.style.left = `-${inner.width - outer.width}px`;
-// 	}
-// }
+	return (
+		<div className="relative flex justify-between gap-6 pb-4 mb-4" ref={slider}>
+			{children}
+		</div>
+	);
+};
 
 export default function Home() {
 	return (
@@ -84,23 +96,18 @@ export default function Home() {
 				<div className="p-6 overflow-auto" style={{ height: "calc(100% - 44px)" }}>
 					<div className="bg-[url('/images/Banner.png')] bg-cover bg-center h-[180px] rounded-[20px] mb-6"></div>
 					<div className="text-[22px] text-white font-semibold mb-2">Current Tap List</div>
-					{/* <div className="slider">
-						<div className="slider-inner">
+					<div className="overflow-hidden">
+						<CustomSlider>
 							<MenuCard bgImgSrc="/images/cardbg1.png" num={1} title="Brazil Loves New England" description="NEIPA with Simcoe, Mosaic, and Citra" members={["4oz - $2", "10oz - $4", "16oz - $7"]} />
 							<MenuCard bgImgSrc="/images/cardbg2.png" num={2} title="Fruit Punch Project" description="Berliner Weisse with Fruit Punch" members={["4oz - $2", "10oz - $4", "16oz - $7"]} />
 							<MenuCard bgImgSrc="/images/cardbg3.png" num={3} title="Doubting The Buffalo" description="Barrel Aged Stout with Cinnamon and Vanilla" members={["4oz - $2", "10oz - $4", "16oz - $7"]} />
 							<MenuCard bgImgSrc="/images/cardbg1.png" num={1} title="Brazil Loves New England" description="NEIPA with Simcoe, Mosaic, and Citra" members={["4oz - $2", "10oz - $4", "16oz - $7"]} />
 							<MenuCard bgImgSrc="/images/cardbg2.png" num={2} title="Fruit Punch Project" description="Berliner Weisse with Fruit Punch" members={["4oz - $2", "10oz - $4", "16oz - $7"]} />
 							<MenuCard bgImgSrc="/images/cardbg3.png" num={3} title="Doubting The Buffalo" description="Barrel Aged Stout with Cinnamon and Vanilla" members={["4oz - $2", "10oz - $4", "16oz - $7"]} />
-						</div>
-					</div> */}
-					<div className="flex justify-between gap-6 pb-2 mb-4 overflow-auto">
-						<MenuCard bgImgSrc="/images/cardbg1.png" num={1} title="Brazil Loves New England" description="NEIPA with Simcoe, Mosaic, and Citra" members={["4oz - $2", "10oz - $4", "16oz - $7"]} />
-						<MenuCard bgImgSrc="/images/cardbg2.png" num={2} title="Fruit Punch Project" description="Berliner Weisse with Fruit Punch" members={["4oz - $2", "10oz - $4", "16oz - $7"]} />
-						<MenuCard bgImgSrc="/images/cardbg3.png" num={3} title="Doubting The Buffalo" description="Barrel Aged Stout with Cinnamon and Vanilla" members={["4oz - $2", "10oz - $4", "16oz - $7"]} />
+						</CustomSlider>
 					</div>
 					<div className="text-[22px] text-white font-semibold mb-2">Current Can/Bottle List</div>
-					<div className="flex justify-between gap-6 pb-2 overflow-auto">
+					<div className="flex justify-between gap-6 pb-4 overflow-auto">
 						<MenuCard bgImgSrc="/images/cardbg.png" num={1} title="Mylar Bags" description="NEIPA with Amarillo, Galaxy, Citra, Mosaic, El dorado" members={["", "16oz Can - $8", ""]} />
 						<MenuCard bgImgSrc="/images/cardbg.png" num={2} title="EverHaze" description="NEIPA with Amarillo, Citra, Cashmere" members={["", "16oz Can - $8", ""]} />
 						<MenuCard bgImgSrc="/images/cardbg.png" num={3} title="Very HHHazyyy" description="NEIPA with Galaxy, Citra, and some other hops" members={["", "16oz Can - $8", ""]} />
