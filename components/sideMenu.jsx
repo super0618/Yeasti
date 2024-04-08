@@ -32,7 +32,7 @@ export default function () {
 	}, []);
 
 	return (
-		<div className="fixed top-0 left-0 bottom-0 w-[76px] bg-[url('/images/Bar.svg')] bg-right-top bg-no-repeat bg-[#1D203E4A] rounded-l-2xl z-50">
+		<div className="fixed top-0 left-0 bottom-0 w-[72px] bg-[url('/images/Bar.svg')] bg-right-top bg-no-repeat bg-[#1D203E4A] rounded-l-2xl z-50">
 			<Link href="/">
 				<img src="/images/logo.svg" alt="logo" className="block mx-auto mt-4 mb-[72px]" />
 			</Link>

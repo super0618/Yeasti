@@ -12,7 +12,7 @@ export default function () {
 				<div className="container space-y-6">
 					<div className="bg-[#060B28] rounded-[20px] p-6">
 						<p className="text-lg font-bold text-white mb-6">Basic Info</p>
-						<div className="grid grid-cols-2 gap-6 text-white mb-6">
+						<div className="grid grid-cols-1 xs:grid-cols-2 gap-6 text-white mb-4">
 							<div>
 								<p className="text-xs font-bold mb-2">First Name</p>
 								<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="eg. Michael" />
@@ -22,7 +22,7 @@ export default function () {
 								<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="eg. Jordan" />
 							</div>
 						</div>
-						<div className="grid grid-cols-4 gap-6 text-white mb-6">
+						<div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 gap-6 text-white mb-4">
 							<div>
 								<p className="text-xs font-bold mb-2">Gender</p>
 								<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="Male" />
@@ -32,15 +32,15 @@ export default function () {
 								<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="February" />
 							</div>
 							<div>
-								<p className="h-4 font-bold mb-2"></p>
-								<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="February" />
+								<p className="h-0 sm:h-4 font-bold mb-2"></p>
+								<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="14" />
 							</div>
 							<div>
-								<p className="h-4 font-bold mb-2"></p>
-								<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="February" />
+								<p className="h-0 sm:h-4 font-bold mb-2"></p>
+								<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="2001" />
 							</div>
 						</div>
-						<div className="grid grid-cols-2 gap-6 text-white mb-6">
+						<div className="grid grid-cols-1 xs:grid-cols-2 gap-6 text-white mb-4">
 							<div>
 								<p className="text-xs font-bold mb-2">Email Address</p>
 								<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="eg. example@address.com" />
@@ -50,21 +50,21 @@ export default function () {
 								<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="eg. example@address.com" />
 							</div>
 						</div>
-						<div className="grid grid-cols-4 gap-6 text-white mb-6">
+						<div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-white mb-4">
 							<div className="col-span-2">
 								<p className="text-xs font-bold mb-2">Address</p>
 								<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="42 Wallaby Way" />
 							</div>
-							<div>
+							<div className="col-span-2 xs:col-span-1">
 								<p className="text-xs font-bold mb-2">Your Location</p>
 								<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="City" />
 							</div>
-							<div>
-								<p className="h-4 font-bold mb-2"></p>
+							<div className="col-span-2 xs:col-span-1">
+								<p className="h-0 xs:h-4 font-bold mb-2"></p>
 								<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="State" />
 							</div>
 						</div>
-						<div className="grid grid-cols-2 gap-6 text-white mb-6">
+						<div className="grid grid-cols-1 xs:grid-cols-2 gap-6 text-white mb-4">
 							<div>
 								<p className="text-xs font-bold mb-2">Language</p>
 								<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="English" />
@@ -77,44 +77,42 @@ export default function () {
 					</div>
 					<div className="bg-[#060B28] rounded-[20px] p-6">
 						<p className="text-lg font-bold text-white mb-6">Change Password</p>
-						<div className="text-white mb-6">
+						<div className="text-white mb-4">
 							<p className="text-xs font-bold mb-2">Current Password</p>
 							<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="Current Password" />
 						</div>
-						<div className="text-white mb-6">
+						<div className="text-white mb-4">
 							<p className="text-xs font-bold mb-2">New Password</p>
 							<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="New Password" />
 						</div>
-						<div className="text-white mb-6">
+						<div className="text-white mb-4">
 							<p className="text-xs font-bold mb-2">Confirm New Password</p>
 							<input className="w-full text-[#e1e1e1] bg-[#0F1535] rounded-2xl border border-[#6271c2] px-4 py-3 text-xs" placeholder="Confirm New Password" />
 						</div>
-						<div className="flex justify-between">
-							<div>
-								<p className="text-lg font-bold text-white mb-2">Password requirements</p>
-								<p className="text-[#A0AEC0]">Please follow this guide for a strong password</p>
-								<ul className="text-[#A0AEC0] text-sm list-inside list-[circle] pl-3">
-									<li>One special characters</li>
-									<li>Min 6 characters</li>
-									<li>One number (2 are recommended)</li>
-									<li>Change it often</li>
-								</ul>
-							</div>
-							<div className="flex items-end justify-end">
-								<div className="bg-white rounded-xl w-32 h-9 grid place-items-center text-[10px] text-[#0F1535] font-black ml-auto">UPDATE PASSWORD</div>
-							</div>
+						<div>
+							<p className="text-lg font-bold text-white mb-2">Password requirements</p>
+							<p className="text-[#A0AEC0]">Please follow this guide for a strong password</p>
+							<ul className="text-[#A0AEC0] text-sm list-inside list-[circle] pl-3 mb-2">
+								<li>One special characters</li>
+								<li>Min 6 characters</li>
+								<li>One number (2 are recommended)</li>
+								<li>Change it often</li>
+							</ul>
 						</div>
+						<div className="bg-white rounded-xl w-32 h-9 grid place-items-center text-[10px] text-[#0F1535] font-black ml-auto">UPDATE PASSWORD</div>
 					</div>
 					<div className="bg-[#060B28] rounded-[20px] p-6">
 						<p className="text-lg font-bold text-white mb-2">Accounts</p>
 						<p className="text-sm text-[#A0AEC0] mb-2">Here you can add and manage your employee permissions</p>
-						<div className="pl-8">
+						<div className="pl-4">
 							<div className="py-4 border-b">
 								<p className="text-white font-bold">New Employee</p>
 								<p className="text-sm text-[#A0AEC0] mb-2">Send an invite here to add an authorized employee.</p>
-								<div className="rounded-lg bg-[#0e1535] flex items-center justify-between h-[50px] px-2">
-									<p className="px-2 text-[#A0AEC0] text-sm">eg. example@adde</p>
-									<div className="bg-white rounded-xl w-32 h-9 grid place-items-center text-[10px] text-[#0F1535] font-black ml-auto">SEND INVITE</div>
+								<div className="relative">
+									<input className="w-full rounded-lg bg-[#0e1535] text-white placeholder:text-[#A0AEC0] px-4 py-3 mb-4 xs:mb-0" placeholder="eg. example@adde" />
+									<div className="xs:absolute top-0 right-1.5 bottom-0 grid place-items-center">
+										<div className="bg-white rounded-xl w-32 h-9 grid place-items-center text-[10px] text-[#0F1535] font-black ml-auto">SEND INVITE</div>
+									</div>
 								</div>
 							</div>
 							<div className="py-4 border-b">
