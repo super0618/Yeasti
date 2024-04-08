@@ -12,15 +12,15 @@ export default function () {
 			case "/":
 				selectRef.current.style.display = "none";
 				break;
-			case "/page1":
+			case "/draft":
 				selectRef.current.style.display = "block";
 				selectRef.current.style.top = "128px";
 				break;
-			case "/page2":
+			case "/package":
 				selectRef.current.style.display = "block";
 				selectRef.current.style.top = "192px";
 				break;
-			case "/page3":
+			case "/search":
 				selectRef.current.style.display = "block";
 				selectRef.current.style.top = "256px";
 				break;
@@ -32,18 +32,18 @@ export default function () {
 	}, []);
 
 	return (
-		<div className="relative basis-[76px] grow-0 shrink-0 bg-[url('/images/Bar.svg')] bg-right-top bg-no-repeat bg-[#1D203E4A] rounded-l-2xl">
+		<div className="fixed top-0 left-0 bottom-0 w-[76px] bg-[url('/images/Bar.svg')] bg-right-top bg-no-repeat bg-[#1D203E4A] rounded-l-2xl z-50">
 			<Link href="/">
 				<img src="/images/logo.svg" alt="logo" className="block mx-auto mt-4 mb-[72px]" />
 			</Link>
-			<Link href="/page1">
-				<img src="/images/ellipse1.svg" alt="elp1" className={`menuitem block mx-auto rounded-full mb-6 ${pathname === "/page1" ? "active" : ""}`} />
+			<Link href="/draft">
+				<img src="/images/ellipse1.svg" alt="elp1" className={`menuitem block mx-auto rounded-full mb-6 ${pathname === "/draft" ? "active" : ""}`} />
 			</Link>
-			<Link href="/page2">
-				<img src="/images/ellipse2.svg" alt="elp2" className={`menuitem block mx-auto rounded-full mb-6 ${pathname === "/page2" ? "active" : ""}`} />
+			<Link href="/package">
+				<img src="/images/ellipse2.svg" alt="elp2" className={`menuitem block mx-auto rounded-full mb-6 ${pathname === "/package" ? "active" : ""}`} />
 			</Link>
-			<Link href="/page3">
-				<img src="/images/ellipse3.svg" alt="elp3" className={`menuitem block mx-auto rounded-full mb-6 ${pathname === "/page3" ? "active" : ""}`} />
+			<Link href="/search">
+				<img src="/images/ellipse3.svg" alt="elp3" className={`menuitem block mx-auto rounded-full mb-6 ${pathname === "/search" ? "active" : ""}`} />
 			</Link>
 			<Link href="/add">
 				<img src="/images/icon_add.svg" alt="add" className={`menuitem block mx-auto rounded-full mb-6 ${pathname === "/add" ? "active" : ""}`} />
