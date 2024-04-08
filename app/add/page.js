@@ -1,8 +1,8 @@
 "use client";
 
-import SideMenu from "@/components/sideMenu";
-import TopNavbar from "@/components/topnavbar";
-import MainContent from "@/components/maincontent";
+import SideMenu from "../../components/sideMenu";
+import TopNavbar from "../../components/topnavbar";
+import MainContent from "../../components/maincontent";
 import { IconPencil, IconTrash } from "@tabler/icons-react";
 
 export default function Home() {

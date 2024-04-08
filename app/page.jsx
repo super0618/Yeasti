@@ -1,11 +1,11 @@
 "use client";
 
-import SideMenu from "@/components/sideMenu";
-import TopNavbar from "@/components/topnavbar";
-import MainContent from "@/components/maincontent";
+import SideMenu from "../components/sideMenu";
+import TopNavbar from "../components/topnavbar";
+import MainContent from "../components/maincontent";
 import { Navigation, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import MenuCard from "@/components/menuCard";
+import MenuCard from "../components/menuCard";
 
 export default function () {
 	return (
