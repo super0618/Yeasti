@@ -3,6 +3,7 @@
 import SideMenu from "../../components/sideMenu";
 import TopNavbar from "../../components/topnavbar";
 import MainContent from "../../components/maincontent";
+import Banner from "../../components/banner";
 import { IconPencil, IconTrash } from "@tabler/icons-react";
 
 export default function Home() {
@@ -13,15 +14,15 @@ export default function Home() {
 			<TopNavbar />
 			<MainContent>
 				<div className="container">
-					<div className="bg-[url('/images/banner_add.png')] bg-cover bg-center h-[180px] rounded-[20px] mb-4"></div>
+					<Banner bgImgSrc="/images/item1.jpg" title="Brazil Loves New England" />
 					<div className="grid grid-cols-2 md:grid-cols-5 gap-4">
 						<div className="col-span-2">
 							<div className="bg-[#060B28] rounded-[20px] p-8">
 								<p className="text-lg font-bold text-white mb-4">Product Image</p>
-								<img src="/images/item.jpg" alt="item" className="w-full mb-6" />
-								<div className="flex justify-center gap-4">
-									<div className="bg-white rounded-xl w-[100px] h-9 grid place-items-center text-[10px] text-[#0F1535] font-black">ADD</div>
-									<div className="bg-white rounded-xl w-[100px] h-9 grid place-items-center text-[10px] text-[#0F1535] font-black">REMOVE</div>
+								<img src="/images/item1.jpg" alt="item" className="w-full mb-6" />
+								<div className="flex justify-center gap-4 text-[10px] text-[#0F1535] font-black">
+									<div className="bg-white rounded-xl w-[100px] h-9 grid place-items-center">ADD</div>
+									<div className="bg-white rounded-xl w-[100px] h-9 grid place-items-center">REMOVE</div>
 								</div>
 							</div>
 						</div>
