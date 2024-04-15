@@ -1,9 +1,9 @@
 "use client";
 
-import SideMenu from "../../components/sideMenu";
-import TopNavbar from "../../components/topnavbar";
-import MainContent from "../../components/maincontent";
-import Banner from "../../components/banner";
+import SideMenu from "@/components/sideMenu";
+import TopNavbar from "@/components/topnavbar";
+import MainContent from "@/components/maincontent";
+import Banner from "@/components/banner";
 
 export default function Home() {
 	return (

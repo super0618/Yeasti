@@ -1,11 +1,11 @@
 "use client";
 
-import SideMenu from "../../components/sideMenu";
-import TopNavbar from "../../components/topnavbar";
-import MainContent from "../../components/maincontent";
+import SideMenu from "@/components/sideMenu";
+import TopNavbar from "@/components/topnavbar";
+import MainContent from "@/components/maincontent";
 import { Navigation, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import MenuCard from "../../components/menuCard";
+import ProductCard from "@/components/productCard";
 
 export default function Home() {
 	return (
@@ -42,13 +42,13 @@ export default function Home() {
 							style={{ paddingBottom: 24 }}
 						>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item1.jpg" num={6} title="Hazy Little Thing" description="Sierra Nevada Brewing Company" members={["20oz bottles", "", ""]} />
+								<ProductCard bgImgSrc="/images/item1.jpg" num={6} title="Hazy Little Thing" description="Sierra Nevada Brewing Company" members={["20oz bottles", "", ""]} />
 							</SwiperSlide>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item2.jpg" num={1} title="Hazy Jane" description="BrewDog" members={["Slim Keg", "", ""]} />
+								<ProductCard bgImgSrc="/images/item2.jpg" num={1} title="Hazy Jane" description="BrewDog" members={["Slim Keg", "", ""]} />
 							</SwiperSlide>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item3.jpg" num={2} title="Hazy Wonder" description="Lagunitas Brewing Comapny" members={["Half Barrel Keg", "", ""]} />
+								<ProductCard bgImgSrc="/images/item3.jpg" num={2} title="Hazy Wonder" description="Lagunitas Brewing Comapny" members={["Half Barrel Keg", "", ""]} />
 							</SwiperSlide>
 						</Swiper>
 					</div>
@@ -69,13 +69,13 @@ export default function Home() {
 							style={{ paddingBottom: 24 }}
 						>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item4.jpg" num={3} title="Mylar Bags" description="NEIPA with Amarillo, Galaxy, Citra, Mosaic, El dorado" members={["16oz Cans", "", ""]} />
+								<ProductCard bgImgSrc="/images/item4.jpg" num={3} title="Mylar Bags" description="NEIPA with Amarillo, Galaxy, Citra, Mosaic, El dorado" members={["16oz Cans", "", ""]} />
 							</SwiperSlide>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item4.jpg" num={1} title="EverHaze" description="NEIPA with Amarillo, Citra, Cashmere" members={["Slim Keg", "", ""]} />
+								<ProductCard bgImgSrc="/images/item4.jpg" num={1} title="EverHaze" description="NEIPA with Amarillo, Citra, Cashmere" members={["Slim Keg", "", ""]} />
 							</SwiperSlide>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item4.jpg" num={5} title="Very HHHazyyy" description="NEIPA with Galaxy, Citra, and some other hops" members={["Slim Keg", "", ""]} />
+								<ProductCard bgImgSrc="/images/item4.jpg" num={5} title="Very HHHazyyy" description="NEIPA with Galaxy, Citra, and some other hops" members={["Slim Keg", "", ""]} />
 							</SwiperSlide>
 						</Swiper>
 					</div>
@@ -96,13 +96,13 @@ export default function Home() {
 							style={{ paddingBottom: 24 }}
 						>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item4.jpg" num={6} title="Mylar Bags" description="NEIPA with Amarillo, Galaxy, Citra, Mosaic, El dorado" members={["", "16oz Can - $8", ""]} />
+								<ProductCard bgImgSrc="/images/item4.jpg" num={6} title="Mylar Bags" description="NEIPA with Amarillo, Galaxy, Citra, Mosaic, El dorado" members={["", "16oz Can - $8", ""]} />
 							</SwiperSlide>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item4.jpg" num={1} title="EverHaze" description="NEIPA with Amarillo, Citra, Cashmere" members={["", "16oz Can - $8", ""]} />
+								<ProductCard bgImgSrc="/images/item4.jpg" num={1} title="EverHaze" description="NEIPA with Amarillo, Citra, Cashmere" members={["", "16oz Can - $8", ""]} />
 							</SwiperSlide>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item4.jpg" num={2} title="Very HHHazyyy" description="NEIPA with Galaxy, Citra, and some other hops" members={["", "16oz Can - $8", ""]} />
+								<ProductCard bgImgSrc="/images/item4.jpg" num={2} title="Very HHHazyyy" description="NEIPA with Galaxy, Citra, and some other hops" members={["", "16oz Can - $8", ""]} />
 							</SwiperSlide>
 						</Swiper>
 					</div>

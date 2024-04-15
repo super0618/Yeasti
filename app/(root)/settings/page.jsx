@@ -1,6 +1,6 @@
-import SideMenu from "../../components/sideMenu";
-import TopNavbar from "../../components/topnavbar";
-import MainContent from "../../components/maincontent";
+import SideMenu from "@/components/sideMenu";
+import TopNavbar from "@/components/topnavbar";
+import MainContent from "@/components/maincontent";
 
 export default function () {
 	return (

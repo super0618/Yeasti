@@ -1,11 +1,11 @@
 "use client";
 
-import SideMenu from "../../components/sideMenu";
-import TopNavbar from "../../components/topnavbar";
-import MainContent from "../../components/maincontent";
+import SideMenu from "@/components/sideMenu";
+import TopNavbar from "@/components/topnavbar";
+import MainContent from "@/components/maincontent";
 import { Navigation, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import MenuCard from "../../components/menuCard";
+import ProductCard from "@/components/productCard";
 
 export default function Home() {
 	return (
@@ -42,14 +42,14 @@ export default function Home() {
 							style={{ paddingBottom: 24 }}
 						>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item1.jpg" title="Hazy Little Thing" description="Sierra Nevada Brewing Company" members={[]} />
+								<ProductCard bgImgSrc="/images/item1.jpg" title="Hazy Little Thing" description="Sierra Nevada Brewing Company" members={[]} />
 							</SwiperSlide>
 							d
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item2.jpg" title="Hazy Jane" description="BrewDog" members={[]} />
+								<ProductCard bgImgSrc="/images/item2.jpg" title="Hazy Jane" description="BrewDog" members={[]} />
 							</SwiperSlide>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item3.jpg" title="Hazy Wonder" description="Lagunitas Brewing Comapny" members={[]} />
+								<ProductCard bgImgSrc="/images/item3.jpg" title="Hazy Wonder" description="Lagunitas Brewing Comapny" members={[]} />
 							</SwiperSlide>
 						</Swiper>
 					</div>
@@ -70,13 +70,13 @@ export default function Home() {
 							style={{ paddingBottom: 24 }}
 						>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item4.jpg" title="Mylar Bags" description="NEIPA with Amarillo, Galaxy, Citra, Mosaic, El dorado" members={[]} />
+								<ProductCard bgImgSrc="/images/item4.jpg" title="Mylar Bags" description="NEIPA with Amarillo, Galaxy, Citra, Mosaic, El dorado" members={[]} />
 							</SwiperSlide>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item4.jpg" title="EverHaze" description="NEIPA with Amarillo, Citra, Cashmere" members={[]} />
+								<ProductCard bgImgSrc="/images/item4.jpg" title="EverHaze" description="NEIPA with Amarillo, Citra, Cashmere" members={[]} />
 							</SwiperSlide>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item4.jpg" title="Very HHHazyyy" description="NEIPA with Galaxy, Citra, and some other hops" members={[]} />
+								<ProductCard bgImgSrc="/images/item4.jpg" title="Very HHHazyyy" description="NEIPA with Galaxy, Citra, and some other hops" members={[]} />
 							</SwiperSlide>
 						</Swiper>
 					</div>
@@ -97,13 +97,13 @@ export default function Home() {
 							style={{ paddingBottom: 24 }}
 						>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item4.jpg" title="Mylar Bags" description="NEIPA with Amarillo, Galaxy, Citra, Mosaic, El dorado" members={[]} />
+								<ProductCard bgImgSrc="/images/item4.jpg" title="Mylar Bags" description="NEIPA with Amarillo, Galaxy, Citra, Mosaic, El dorado" members={[]} />
 							</SwiperSlide>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item4.jpg" title="EverHaze" description="NEIPA with Amarillo, Citra, Cashmere" members={[]} />
+								<ProductCard bgImgSrc="/images/item4.jpg" title="EverHaze" description="NEIPA with Amarillo, Citra, Cashmere" members={[]} />
 							</SwiperSlide>
 							<SwiperSlide>
-								<MenuCard bgImgSrc="/images/item4.jpg" title="Very HHHazyyy" description="NEIPA with Galaxy, Citra, and some other hops" members={[]} />
+								<ProductCard bgImgSrc="/images/item4.jpg" title="Very HHHazyyy" description="NEIPA with Galaxy, Citra, and some other hops" members={[]} />
 							</SwiperSlide>
 						</Swiper>
 					</div>
