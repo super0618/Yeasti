@@ -13,14 +13,6 @@ import httpReq from "@/lib/httpReq";
 export default function () {
 	useEffect(() => {
 		(async () => {
-			// const resProducts = await fetch("/api/products/get", {
-			// 	method: "POST",
-			// 	headers: { "Content-Type": "application/json" },
-			// 	body: JSON.stringify({ id: "1e08d6fc-0c0a-4f72-865a-23e88e4b9414" }),
-			// });
-			// const products = await resProducts.json();
-			// console.log(products);
-
 			const products = await httpReq.post("/api/products/get", { id: "1e08d6fc-0c0a-4f72-865a-23e88e4b9414" });
 			console.log(products);
 		})();

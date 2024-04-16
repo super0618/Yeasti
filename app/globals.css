@@ -23,6 +23,11 @@
 	background: #555;
 }
 
+select:focus {
+	outline: none;
+	border: none;
+}
+
 .menuitem:hover {
 	box-shadow: -5px 5px 20px -5px #00daea, 0px 0px 20px 0px #c441f4;
 }
