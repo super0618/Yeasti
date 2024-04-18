@@ -7,7 +7,7 @@ import MainContent from "@/components/maincontent";
 import Banner from "@/components/banner";
 import { IconTrash } from "@tabler/icons-react";
 import NumericInput from "react-numeric-input";
-import { toast } from "react-toastify";
+import { toast } from "sonner";
 import httpReq from "@/lib/httpReq";
 
 const Select = ({ name, onChange = null, children }) => {
