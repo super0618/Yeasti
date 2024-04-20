@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useCookies } from "react-cookie";
 import Link from "next/link";
 import AuthLogo from "../auth-logo";
 import { toast } from "sonner";
@@ -9,6 +10,7 @@ import httpReq from "@/lib/httpReq";
 export default function SignIn() {
 	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
+	const [cookies, setCookie] = useCookies(["token"]);
 
 	const onSignIn = async (e: any) => {
 		e.preventDefault();
@@ -21,8 +23,8 @@ export default function SignIn() {
 			return;
 		}
 		try {
-			// const res = await httpReq.post("/api/auth/signin", { email, password });
-			// const products = await httpReq.post("/api/products/getbyuserid", { id: "1e08d6fc-0c0a-4f72-865a-23e88e4b9414" });
+			const res = await httpReq.post("/api/auth/signin", { email, password });
+			setCookie("token", res);
 		} catch (err: any) {
 			toast.warning(err.message);
 		}
