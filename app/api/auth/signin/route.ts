@@ -14,6 +14,7 @@ export async function POST(req: Request) {
 		return Response.json({ success: false, data: { message: "Password does not match" } });
 	}
 
+	data.password = reqData.password;
 	const jwt_token = sign(data, "secret");
 	return Response.json({ success: true, data: jwt_token });
 }

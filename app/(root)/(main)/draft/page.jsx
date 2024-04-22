@@ -1,13 +1,26 @@
 "use client";
 
+import { useEffect, useContext } from "react";
 import SideMenu from "@/components/sideMenu";
 import TopNavbar from "@/components/topnavbar";
 import MainContent from "@/components/maincontent";
 import Banner from "@/components/banner";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ProductCard from "@/components/productCard";
+import { AuthContext } from "@/lib/context";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+	const { auth, setAuth } = useContext(AuthContext);
+	const router = useRouter();
+
+	useEffect(() => {
+		console.log(auth);
+		// if (!auth) {
+		// 	router.push("/");
+		// }
+	}, [auth]);
+
 	return (
 		<div className="main-container">
 			<SideMenu />

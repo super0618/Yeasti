@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { useCookies } from "react-cookie";
+import { AuthContext } from "@/lib/context";
 import Link from "next/link";
 import AuthLogo from "../auth-logo";
 import { toast } from "sonner";
@@ -11,6 +13,8 @@ export default function SignIn() {
 	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
 	const [cookies, setCookie] = useCookies(["token"]);
+	const { auth, setAuth } = useContext<any>(AuthContext);
+	const router = useRouter();
 
 	const onSignIn = async (e: any) => {
 		e.preventDefault();
@@ -25,10 +29,17 @@ export default function SignIn() {
 		try {
 			const res = await httpReq.post("/api/auth/signin", { email, password });
 			setCookie("token", res);
+			setAuth(true);
 		} catch (err: any) {
 			toast.warning(err.message);
 		}
 	};
+
+	useEffect(() => {
+		if (auth) {
+			router.push("/draft");
+		}
+	}, []);
 
 	return (
 		<>
