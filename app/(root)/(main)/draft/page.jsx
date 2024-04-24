@@ -11,14 +11,13 @@ import { AuthContext } from "@/lib/context";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
-	const { auth, setAuth } = useContext(AuthContext);
+	const { auth } = useContext(AuthContext);
 	const router = useRouter();
 
 	useEffect(() => {
-		console.log(auth);
-		// if (!auth) {
-		// 	router.push("/");
-		// }
+		if (!auth) {
+			router.push("/");
+		}
 	}, [auth]);
 
 	return (
